@@ -15,10 +15,16 @@ import { CurrencyController } from './controllers/currency/currency.controller';
 import { AccountType } from 'src/typeorm/entities/AccountType';
 import { AccountTypeController } from './controllers/account-type/account-type.controller';
 import { AccountTypeService } from './services/account-type/account-type.service';
+import { TransactionType } from 'src/typeorm/entities/TransactionType';
+import { TransactionTypeService } from './services/transaction-type/transaction-type.service';
+import { TransactionTypeController } from './controllers/transaction-type/transaction-type.controller';
+import { AccountStatus } from 'src/typeorm/entities/AccountStatus';
+import { AccountStatusService } from './services/account-status/account-status.service';
+import { AccountStatusController } from './controllers/account-status/account-status.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType])],
-  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController],
-  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService]
+  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus])],
+  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController],
+  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService]
 })
 export class UsersModule { }

@@ -8,6 +8,8 @@ import { Profile } from './typeorm/entities/Profile';
 import { Account } from './typeorm/entities/Account';
 import { Currency } from './typeorm/entities/Currency';
 import { AccountType } from './typeorm/entities/AccountType';
+import { TransactionType } from './typeorm/entities/TransactionType';
+import { AccountStatus } from './typeorm/entities/AccountStatus';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,7 +19,7 @@ import { AccountType } from './typeorm/entities/AccountType';
     username: 'root',
     password: '',
     database: 'typeorm_practice',
-    entities: [User, Profile, Account, Currency, AccountType],
+    entities: [User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus],
     synchronize: true,
   }), UsersModule],
   controllers: [AppController],

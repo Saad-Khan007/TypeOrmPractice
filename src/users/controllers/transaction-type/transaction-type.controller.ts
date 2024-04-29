@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import { CurrencyDto } from 'src/users/dtos/dto';
-import { AccountTypeService } from 'src/users/services/account-type/account-type.service';
+import { TransactionTypeService } from 'src/users/services/transaction-type/transaction-type.service';
 
-@Controller('account-type')
-export class AccountTypeController {
-    constructor(private service: AccountTypeService) { }
+@Controller('transaction-type')
+export class TransactionTypeController {
+    constructor(private service: TransactionTypeService) { }
 
     @Get()
     get() {
