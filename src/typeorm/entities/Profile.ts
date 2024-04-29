@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Account } from "./Account";
 
-@Entity({ name: 'user-profile' })
+@Entity({ name: 'profile' })
 export class Profile {
     @PrimaryGeneratedColumn({ type: 'bigint' })
     id: number;
@@ -13,7 +14,10 @@ export class Profile {
 
     @Column()
     age: number;
-    
+
     @Column()
     dob: string;
+
+    @OneToMany(() => Account, (account) => account.profile)
+    accounts: Account[];
 }
