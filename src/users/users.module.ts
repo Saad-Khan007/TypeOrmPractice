@@ -9,10 +9,16 @@ import { Profile } from 'src/typeorm/entities/Profile';
 import { Account } from 'src/typeorm/entities/Account';
 import { AccountController } from './controllers/account/account.controller';
 import { AccountService } from './services/account/account.service';
+import { Currency } from 'src/typeorm/entities/Currency';
+import { CurrencyService } from './services/currency/currency.service';
+import { CurrencyController } from './controllers/currency/currency.controller';
+import { AccountType } from 'src/typeorm/entities/AccountType';
+import { AccountTypeController } from './controllers/account-type/account-type.controller';
+import { AccountTypeService } from './services/account-type/account-type.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Profile, Account])],
-  controllers: [UsersController, UserProfileController, AccountController],
-  providers: [UsersService, UserProfileService, AccountService]
+  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType])],
+  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController],
+  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService]
 })
 export class UsersModule { }

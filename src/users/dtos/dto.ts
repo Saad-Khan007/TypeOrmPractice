@@ -1,6 +1,7 @@
 export class UserDto {
     username: string;
     password: string;
+    email: string;
 }
 
 export class GetUserDto {
@@ -17,4 +18,8 @@ export class UserProfileDto {
 export class AccountDto {
     accountName: string;
     balance: number;
+}
+
+export class CurrencyDto {
+    name: string;
 }

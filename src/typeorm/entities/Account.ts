@@ -1,5 +1,6 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Profile } from "./Profile";
+import { Currency } from "./Currency";
 
 @Entity({ name: "account" })
 export class Account {
@@ -17,4 +18,8 @@ export class Account {
 
     @ManyToOne(() => Profile, (profile)=> profile.accounts)
     profile: Profile;
+
+    @OneToOne(() => Currency)
+    @JoinColumn()
+    currency: Currency;
 }

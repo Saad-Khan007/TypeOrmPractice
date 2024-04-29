@@ -14,7 +14,7 @@ export class AccountService {
     ) { }
 
     findAccount() {
-        return this.accountRepo.find({relations: ['profile']});
+        return this.accountRepo.find({relations: ['profile','currency']});
     }
 
     async createAccount(id: number, accountDetails: AccountParams) {
