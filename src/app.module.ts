@@ -10,6 +10,9 @@ import { Currency } from './typeorm/entities/Currency';
 import { AccountType } from './typeorm/entities/AccountType';
 import { TransactionType } from './typeorm/entities/TransactionType';
 import { AccountStatus } from './typeorm/entities/AccountStatus';
+import { Category } from './typeorm/entities/Category';
+import { SavingGoal } from './typeorm/entities/SavingGoal';
+import { Tag } from './typeorm/entities/Tag';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -18,8 +21,8 @@ import { AccountStatus } from './typeorm/entities/AccountStatus';
     port: 3306,
     username: 'root',
     password: '',
-    database: 'typeorm_practice',
-    entities: [User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus],
+    database: 'hysab_kytab',
+    entities: [User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag],
     synchronize: true,
   }), UsersModule],
   controllers: [AppController],

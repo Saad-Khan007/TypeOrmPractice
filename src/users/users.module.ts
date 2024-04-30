@@ -21,10 +21,15 @@ import { TransactionTypeController } from './controllers/transaction-type/transa
 import { AccountStatus } from 'src/typeorm/entities/AccountStatus';
 import { AccountStatusService } from './services/account-status/account-status.service';
 import { AccountStatusController } from './controllers/account-status/account-status.controller';
+import { Category } from 'src/typeorm/entities/Category';
+import { CategoryController } from './controllers/category/category.controller';
+import { CategoryService } from './services/category/category.service';
+import { SavingGoal } from 'src/typeorm/entities/SavingGoal';
+import { Tag } from 'src/typeorm/entities/Tag';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus])],
-  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController],
-  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService]
+  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag])],
+  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController, CategoryController],
+  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService, CategoryService]
 })
 export class UsersModule { }

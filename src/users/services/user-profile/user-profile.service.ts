@@ -14,7 +14,7 @@ export class UserProfileService {
     ) { }
 
     findUserProfile() {
-        return this.profileRepo.find({relations: ['accounts']});
+        return this.profileRepo.find({relations: ['accounts','user']});
     }
 
     async createUserProfile(id: number, userProfileDetails: UserProfileParams) {
@@ -25,7 +25,7 @@ export class UserProfileService {
                 , HttpStatus.BAD_REQUEST
             );
         }
-        const newUserProfile = this.profileRepo.create(userProfileDetails);
+        const newUserProfile = this.profileRepo.create({...userProfileDetails, user});
         const saveUserProfile = await this.profileRepo.save(newUserProfile);
         user.profile = saveUserProfile;
         return this.userRepo.save(user);

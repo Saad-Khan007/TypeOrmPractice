@@ -16,7 +16,6 @@ export class UserProfileDto {
 }
 
 export class AccountDto {
-    accountName: string;
     balance: number;
 }
 

@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ name: "currency" })
-export class Currency {
+@Entity({ name: "category" })
+export class Category {
     @PrimaryGeneratedColumn({ type: 'bigint' })
     id: number;
 

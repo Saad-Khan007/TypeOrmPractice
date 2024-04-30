@@ -16,7 +16,6 @@ export class UserProfileParams {
 }
 
 export class AccountParams {
-    accountName: string;
     balance: number;
 }
 

@@ -11,12 +11,14 @@ export class AccountController {
         return this.accountService.findAccount();
     }
 
-    @Post(':id')
+    @Post(':id/:currencyId/:typeId')
     createAccount(
         @Param('id', ParseIntPipe) id: number,
+        @Param('currencyId', ParseIntPipe) currencyId: number,
+        @Param('typeId', ParseIntPipe) typeId: number,
         @Body() accountDto: AccountDto
     ) {
-        return this.accountService.createAccount(id, accountDto);
+        return this.accountService.createAccount(id, currencyId, typeId, accountDto);
     }
 
     @Put(':id')
