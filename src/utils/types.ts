@@ -22,3 +22,8 @@ export class AccountParams {
 export class CurrencyParams {
     name: string;
 }
+export class SavingGoalParams {
+    name: string;
+    completionDate: string;
+    targetAmount: number;
+}

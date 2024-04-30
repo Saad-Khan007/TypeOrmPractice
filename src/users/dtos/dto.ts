@@ -22,3 +22,9 @@ export class AccountDto {
 export class CurrencyDto {
     name: string;
 }
+
+export class SavingGoalDto {
+    name: string;
+    completionDate: string;
+    targetAmount: number;
+}

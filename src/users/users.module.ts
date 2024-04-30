@@ -26,10 +26,12 @@ import { CategoryController } from './controllers/category/category.controller';
 import { CategoryService } from './services/category/category.service';
 import { SavingGoal } from 'src/typeorm/entities/SavingGoal';
 import { Tag } from 'src/typeorm/entities/Tag';
+import { SavingGoalService } from './services/saving-goal/saving-goal.service';
+import { SavingGoalController } from './controllers/saving-goal/saving-goal.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag])],
-  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController, CategoryController],
-  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService, CategoryService]
+  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController, CategoryController, SavingGoalController],
+  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService, CategoryService, SavingGoalService]
 })
 export class UsersModule { }

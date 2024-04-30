@@ -41,5 +41,5 @@ export class Account {
     accountStatus: AccountStatus;
 
     @OneToMany(() => SavingGoal, (savingGoal) => savingGoal.account)
-    savingGoal: SavingGoal;
+    savingGoal: SavingGoal[];
 }
