@@ -28,10 +28,13 @@ import { SavingGoal } from 'src/typeorm/entities/SavingGoal';
 import { Tag } from 'src/typeorm/entities/Tag';
 import { SavingGoalService } from './services/saving-goal/saving-goal.service';
 import { SavingGoalController } from './controllers/saving-goal/saving-goal.controller';
+import { Budget } from 'src/typeorm/entities/Budget';
+import { BudgetService } from './services/budget/budget.service';
+import { BudgetController } from './controllers/budget/budget.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag])],
-  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController, CategoryController, SavingGoalController],
-  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService, CategoryService, SavingGoalService]
+  imports: [TypeOrmModule.forFeature([User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag, Budget])],
+  controllers: [UsersController, UserProfileController, AccountController, CurrencyController, AccountTypeController, TransactionTypeController, AccountStatusController, CategoryController, SavingGoalController, BudgetController],
+  providers: [UsersService, UserProfileService, AccountService, CurrencyService, AccountTypeService, TransactionTypeService, AccountStatusService, CategoryService, SavingGoalService, BudgetService]
 })
 export class UsersModule { }

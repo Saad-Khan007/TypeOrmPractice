@@ -13,6 +13,7 @@ import { AccountStatus } from './typeorm/entities/AccountStatus';
 import { Category } from './typeorm/entities/Category';
 import { SavingGoal } from './typeorm/entities/SavingGoal';
 import { Tag } from './typeorm/entities/Tag';
+import { Budget } from './typeorm/entities/Budget';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -22,7 +23,7 @@ import { Tag } from './typeorm/entities/Tag';
     username: 'root',
     password: '',
     database: 'hysab_kytab',
-    entities: [User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag],
+    entities: [User, Profile, Account, Currency, AccountType, TransactionType, AccountStatus, Category, SavingGoal, Tag, Budget],
     synchronize: true,
   }), UsersModule],
   controllers: [AppController],

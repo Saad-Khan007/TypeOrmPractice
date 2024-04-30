@@ -28,3 +28,8 @@ export class SavingGoalDto {
     completionDate: string;
     targetAmount: number;
 }
+
+export class BudgetDto {
+    month: string;
+    amount: number;
+}

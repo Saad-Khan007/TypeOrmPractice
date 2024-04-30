@@ -27,3 +27,8 @@ export class SavingGoalParams {
     completionDate: string;
     targetAmount: number;
 }
+
+export class BudgetParams {
+    month: string;
+    amount: number;
+}
